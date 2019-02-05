@@ -3,7 +3,7 @@
 
 -- USE portfolio_db;
 
-CREATE TABLE artWork
+CREATE TABLE Artwork
 (
 	id int NOT NULL AUTO_INCREMENT,
 	title varchar(160) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE artWork
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE commissionRequests
+CREATE TABLE CommissionRequests
 (
 	id int NOT NULL AUTO_INCREMENT,
 	name varchar(160) NOT NULL,
