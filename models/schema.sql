@@ -11,11 +11,11 @@ CREATE TABLE artWork
 	dateCreated date NULL,
     imgURL varchar(255) NOT NULL,
 	category varchar(160) NULL,
-    price float NULL,
+    price float(20,2) NULL,
     size varchar(50) NULL,
     medium varchar(50) NULL,
-    artist varchar(50) NULL
-	PRIMARY KEY (id),
+    artist varchar(50) NULL,
+	PRIMARY KEY (id)
 );
 
 CREATE TABLE commissionRequests
@@ -27,6 +27,6 @@ CREATE TABLE commissionRequests
     phone varchar(20) NULL,
     email varchar(100) NOT NULL,
     medium varchar(50) NULL,
-    artist varchar(50) NULL
-	PRIMARY KEY (id),
+    artist varchar(50) NULL,
+	PRIMARY KEY (id)
 );
