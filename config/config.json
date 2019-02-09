@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "burgerTime/!",
     "port": 3306,
-    "database": "DB",
+    "database": "portfolio_db",
     "host": "localhost",
     "dialect": "mysql"
   },

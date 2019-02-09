@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var CommissionRequests = sequelize.define("CommissionRequests", {
+  var CommissionRequest = sequelize.define("CommissionRequest", {
     name: DataTypes.STRING,
     requestDetails: DataTypes.TEXT,
     referenceImgURL: DataTypes.STRING,
@@ -8,5 +8,5 @@ module.exports = function(sequelize, DataTypes) {
     medium: DataTypes.STRING,
     artist: DataTypes.STRING
   });
-  return CommissionRequests;
+  return CommissionRequest;
 };
