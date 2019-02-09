@@ -1,3 +1,5 @@
+// TODO fix all of the javascript recovery
+
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
@@ -6,30 +8,50 @@ var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveArtwork: function(artwork) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/artwork",
+      data: JSON.stringify(artwork)
     });
   },
-  getExamples: function() {
+  saveCommissionRequest: function(commissionrequest) {
     return $.ajax({
-      url: "api/examples",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/commission%20request",
+      data: JSON.stringify(commissionrequest)
+    });
+  },
+  getArtwork: function() {
+    return $.ajax({
+      url: "api/artwork",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  getCommissionRequest: function() {
     return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
+      url: "api/commission%20request",
+      type: "GET"
     });
   }
+  // Update functionality can be added as needed
+  // Removed delete can be added later
+  // deleteExample: function(id) {
+  //   return $.ajax({
+  //     url: "api/examples/" + id,
+  //     type: "DELETE"
+  //   });
+  // }
 };
 
+// Nothing has been changed below this line
+// ====================================================================
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
