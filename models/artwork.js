@@ -14,7 +14,11 @@ module.exports = function(sequelize, DataTypes) {
       },
       size: DataTypes.STRING,
       medium: DataTypes.STRING,
-      artist: DataTypes.STRING
+      artist: DataTypes.STRING,
+      onCarousel: {
+        type: DataTypes.BOOLEAN,
+        default: 0
+      }
     },
     {
       freezeTableName: true
