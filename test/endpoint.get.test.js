@@ -16,6 +16,7 @@ describe("GET /api/artwork", function() {
     return db.sequelize.sync({ force: true });
   });
 
+
   it("Should find all artwork", function(done) {
     db.Artwork.bulkCreate([
       {
@@ -46,15 +47,17 @@ describe("GET /api/artwork", function() {
         var responseStatus = res.status;
         var responseBody = res.body;
 
-        // Run assertions on the response
 
-        expect(err).to.be.null;
+      // Run assertions on the response
 
-        expect(responseStatus).to.equal(200);
+      expect(err).to.be.null;
 
-        expect(responseBody)
-          .to.be.an("array")
-          .that.has.lengthOf(2);
+      expect(responseStatus).to.equal(200);
+
+      expect(responseBody)
+        .to.be.an("array")
+        .that.has.lengthOf(2);
+
 
         expect(responseBody[0])
           .to.be.an("object")
