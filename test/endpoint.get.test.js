@@ -15,28 +15,27 @@ describe("GET /api/artwork", function() {
     request = chai.request(server);
     return db.sequelize.sync({ force: true });
   });
-});
 
-it("Should find all artwork", function(done) {
-  db.artwork.bulkCreate([
+  it("Should find all artwork", function(done) {
+    db.Artwork.bulkCreate([
       {
-        title: "Great Artwork", 
+        title: "Great Artwork",
         description: "What a great piece of work",
-        dateCreated: 2018-01-01,
+        dateCreated: "2018-01-01",
         imgURL: "www.img.com",
         category: "Some great stuff",
-        price: 120.00,
+        price: 120.0,
         size: "10x10",
         medium: "canvas",
         artist: "Jimbo"
       },
       {
-        title: "Bad Artwork", 
+        title: "Bad Artwork",
         description: "What a bad piece of work",
-        dateCreated: 2019-01-01,
+        dateCreated: "2019-01-01",
         imgURL: "www.img2.com",
         category: "Some terrible stuff",
-        price: 20.00,
+        price: 20.0,
         size: "12x12",
         medium: "canvas",
         artist: "Glimbo"
@@ -59,14 +58,35 @@ it("Should find all artwork", function(done) {
 
         expect(responseBody[0])
           .to.be.an("object")
-          .that.includes({ text: "First Example", description: "First Description" });
+          .that.includes({
+            title: "Great Artwork",
+            description: "What a great piece of work",
+            dateCreated: "2018-01-01",
+            imgURL: "www.img.com",
+            category: "Some great stuff",
+            price: 120.0,
+            size: "10x10",
+            medium: "canvas",
+            artist: "Jimbo"
+          });
 
         expect(responseBody[1])
           .to.be.an("object")
-         .that.includes({ text: "Second Example", description: "Second Description" });
+          .that.includes({
+            title: "Bad Artwork",
+            description: "What a bad piece of work",
+            dateCreated: "2019-01-01",
+            imgURL: "www.img2.com",
+            category: "Some terrible stuff",
+            price: 20.0,
+            size: "12x12",
+            medium: "canvas",
+            artist: "Glimbo"
+          });
 
-      // The `done` function is used to end any asynchronous tests
-      done();
+        // The `done` function is used to end any asynchronous tests
+        done();
+      });
     });
   });
 });
