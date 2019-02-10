@@ -194,118 +194,31 @@ li {
 }
   
 #about-container{
-  margin-top: 10px;
+
+  margin-top: 250px;
+  text-align: center;
+  font-family:'Waiting for the Sunrise', cursive;
+  background-color:grey;
+  width:70%;
+  color:white;
+  font-size: 18px;
 }
 
-/* About Gigify */
-/* About Gigify */
-.about-card {
-  /* width: 100vw;
-  height: 100vh; */
-  padding-top: 10px;
-  background: rgba(36, 87, 108, 0.2);
-  border: none;
-  box-shadow: none;
-  font-size: 20px;
-  align-content: center;
-  color: black;
-}
-
-.about-container {
+#about-arrow{
+  width:100%;
   text-align: center;
 }
-
-.about-header {
-  font-family: 'Pacifico', cursive;
-  display: inline-block;
-  font-size: 80px;
-}
-#about-gigify-arrow {
-  color: white;
+#arrow{
+   font-size:50px;
+   color:#9D00FF
 }
 
-#about-gigify-arrow:hover {
-  cursor: pointer;
-}
-#landing-page-container {
-  width: 100vw;
-  height: 200vh;
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url("../images/concert_background2.jpg");
-  background-blend-mode: color;
-  margin: 0;
-  padding: 0;
+/* Porfolio Page*/
+
+#portfolio-container{
+  background-color:grey;
+  border-color:#9D00FF;
+  border: solid 2px;
+  width:70%;
 }
 
-.landing-page {
-  height: 200vh;
-}
-#about-gigify-container {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  background: url("../images/whirlpool.png");
-  background-repeat: repeat;
-  height: 100vh;
-}
-
-#headerwrap {
-  background: url(../img/header-bg.jpg) no-repeat center top;
-  margin-top: -10px;
-  padding-top: 20px;
-    background-attachment: relative;
-  background-position: center center;
-  min-height: 700px;
-  width: 100%;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#headerwrap h1 {
-  margin-top: 150px;
-  color: white;
-  font-size: 70px;
-  font-weight: 700;
-}
-
-#headerwrap h3 {
-  color: white;
-  font-size: 30px;
-  font-weight: 100;
-  font-family: 'EB Garamond', serif;
-  font-style: oblique;
-}
-#f {
-  background: black;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  text-align: center;
-  height: 100vh
-}
-
-#f h3 {
-  color: white;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-#f i {
-  font-size: 8px;
-  color: #fff;
-  padding: 3px;
-}
-
-#f p {
-  font-size: 20px;
-  color: #f2f2f2;
-}
-
-#f img {
-  text-align: center;
-}
