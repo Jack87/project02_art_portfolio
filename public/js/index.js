@@ -1,121 +1,129 @@
 // TODO fix all of the javascript recovery
 
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+// var modalSubmit = $("#modal-submit");
+// var $exampleDescription = $("#example-description");
+// var $submitBtn = $("#submit");
+// var $exampleList = $("#example-list");
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveArtwork: function(artwork) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/artwork",
-      data: JSON.stringify(artwork)
-    });
-  },
-  saveCommissionRequest: function(commissionrequest) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/commission%20request",
-      data: JSON.stringify(commissionrequest)
-    });
-  },
-  getArtwork: function() {
-    return $.ajax({
-      url: "api/artwork",
-      type: "GET"
-    });
-  },
-  getCommissionRequest: function() {
-    return $.ajax({
-      url: "api/commission%20request",
-      type: "GET"
-    });
-  }
-  // Update functionality can be added as needed
-  // Removed delete can be added later
-  // deleteExample: function(id) {
-  //   return $.ajax({
-  //     url: "api/examples/" + id,
-  //     type: "DELETE"
-  //   });
-  // }
-};
-
-// Nothing has been changed below this line
-// ====================================================================
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+$(document).ready(function() {
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBikFIfVDs1cKfQC646rJIHDDaFR4b2WCI",
+    authDomain: "art-portfolio-project02.firebaseapp.com",
+    databaseURL: "https://art-portfolio-project02.firebaseio.com",
+    projectId: "art-portfolio-project02",
+    storageBucket: "art-portfolio-project02.appspot.com",
+    messagingSenderId: "217185611797"
+  };
+  firebase.initializeApp(config);
+  // The API object contains methods for each kind of request we'll make
+  var API = {
+    saveArtwork: function(artwork) {
+      return $.ajax({
+        headers: {
+          "Content-Type": "application/json"
+        },
+        type: "POST",
+        url: "api/artwork",
+        data: JSON.stringify(artwork)
+      });
+    },
+    saveCommissionRequest: function(commissionrequest) {
+      return $.ajax({
+        headers: {
+          "Content-Type": "application/json"
+        },
+        type: "POST",
+        url: "api/commission%20request",
+        data: JSON.stringify(commissionrequest)
+      });
+    },
+    getArtwork: function() {
+      return $.ajax({
+        url: "api/artwork",
+        type: "GET"
+      });
+    },
+    getCommissionRequest: function() {
+      return $.ajax({
+        url: "api/commission%20request",
+        type: "GET"
+      });
+    }
+    // Update functionality can be added as needed
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  $("#modal-submit").click(function() {
+    console.log($("#icon_attach_file")[0].files[0].type);
+    var name = $("#icon_prefix").val();
+    var phone = $("#icon_telephone").val();
+    var email = $("#icon_email").val();
+    var description = $("#textarea1").val();
+    var imageFile = $("#icon_attach_file")[0].files[0];
+    var imageType = imageFile.type;
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+    // Firebase variables for file upload
+    // File metadata
+    var metaData = {
+      contentType: imageType
+    };
+    var storageRef = firebase.storage().ref();
+
+    // A variable for uploading to the commissionExamples
+    var uploadTask = storageRef
+      .child("commissionExamples/" + imageFile.name)
+      .put(imageFile, metaData);
+
+    // Listen for state changes, errors, and completion of upload
+    uploadTask.on(
+      firebase.storage.TaskEvent.STATE_CHANGED,
+      function(snapshot) {
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        console.log(typeof progress);
+        if (progress === 100) {
+          uploadIsDone();
+        }
+        switch (snapshot.state) {
+          case firebase.storage.TaskState.PAUSED:
+            console.log("Upload is paused.");
+            break;
+          case firebase.storage.TaskState.RUNNING:
+            console.log("Upload is running.");
+            break;
+        }
+      },
+      function(error) {
+        // Log the error code a list can be found at
+        // https://irebase.google.com/docs/storage/web/handle-errors
+        switch (error.code) {
+          case "storage/unauthorized":
+            console.log("User is not authorized to access this database.");
+            break;
+          case "storage/canceled":
+            console.log("User has cancelled the upload.");
+            break;
+          case "storage/unknown":
+            console.log(
+              "This is an unknown error. Please inspect error.serverResponse."
+            );
+            break;
+        }
+      }
+    );
+    function uploadIsDone() {
+      // Grab the download URL after upload
+      uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+        var commissionrequest = {
+          name: name,
+          requestDetails: description,
+          referenceImgURL: downloadURL,
+          phone: phone,
+          email: email
+        };
+        API.saveCommissionRequest(commissionrequest);
+      });
+    }
   });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
-
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+});
