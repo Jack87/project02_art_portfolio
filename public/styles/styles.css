@@ -83,6 +83,7 @@ body{
   font-size: 70px;
   color: rgb(36, 224, 224);
   margin-left:25px;
+  margin-top: 40px;
 }
 #commission-content{
   padding: 0 !important;
@@ -193,8 +194,10 @@ li {
   margin-left: 10px;
 }
   
+
+/*About the ARTIST section*/
 #about-container{
-  margin-top: 250px;
+  margin-top: 400px;
   text-align: center;
   font-family:'Waiting for the Sunrise', cursive;
   background-color:grey;
@@ -210,6 +213,53 @@ li {
 #arrow{
    font-size:50px;
    color:#9D00FF
+}
+#home-arrow{
+  width:100%;
+  text-align: center;
+}
+
+#artist-img{
+    height:300px;
+    width: 250px
+}
+
+hr{
+    margin-top:300px;
+    padding-top:5px;
+    background-color:lime;
+    font-size: 2px;
+    width:70%;
+}
+
+/*PORTFOLIO CSS*/
+#portfolio-container{
+   background-color: black;
+   opacity: .7;
+   
+}
+#portfolioh2{
+  color:#9D00FF
+}
+#portfolio-cards{
+   background-color: rgb(58, 57, 57);
+   height:400px;
+   box-shadow: 2px;
+}
+#contact-button{
+   background-color:teal;
+
+}
+
+#contact-submit{
+  background-color: teal;
+  font-family: 'Waiting for the Sunrise', cursive;
+  color:white;
+  font-size: 18px;
+
+}
+#footer{
+   text-align:center;
 }
 
 

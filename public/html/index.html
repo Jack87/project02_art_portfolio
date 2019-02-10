@@ -14,7 +14,7 @@
  </head>
 
 <body>
-  <!-- Modal Structure -->
+  <!-- Commission Modal-->
   <div id="modal1" class="modal">
     <div class="modal-content" id="commission-content">
       <h4 id="modal-header">  Commissioned Art Request</h4>
@@ -61,15 +61,58 @@
     </div>
   </div>
 
+
+  <!--MODAL 2 (Contact)-->
+
+  <div id="modal2" class="modal">
+      <div class="modal-content" id="commission-content">
+        <h4 style="text-align: center" id="modal-header">  Let's Chat</h4>
+        <p>Fill out the form below to contact me:</p>
+  
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Telephone</label>
+              </div>
+            </div>
+           <div class= "row">
+              <div class="input-field col s6">
+                   <i class="material-icons prefix">email</i>
+                  <input id= "icon_email" type="email" class="validate">
+                  <label for="icon_email">Email</label>
+              </div>
+           </div>
+          <div class="row">
+              <div class="input-field col s12" style="text-align: center;">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Message:</label>
+              </div>
+          </div>
+       </form>
+  
+  
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close btn-flat" id="contact-submit">Submit</a>
+      </div>
+    </div>
+
   <!--NAV BAR (SIDE)-->
         <div class="nav-wrapper">
                 <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" id="burger">menu</i></a>
                 <ul id="slide-out" class="side-nav">
                 <!-- <li><a href="#!">About</a></li> -->
                 <p><li"><a href="#about"><font color="white">About</a></li></font></p>
-               <p><li"><a href="#!"><font color="white">Portfolio</a></li></font></p>
+               <p><li"><a href="portfolio.html"><font color="white">Portfolio</a></li></font></p>
                <p><li"><a class="modal-trigger" href="#modal1"><font color="white">Commissions</a></li></font></p>
-                <p><li"><a href="#!"><font color="white">Contact</a></li></font></p>
+                <p><li"><a class="modal-trigger" href="#modal2"><font color="white">Contact</a></li></font></p>
                   <ul class="collapsible collapsible-accordion"></ul>
                     <li>
                         <div class="list-group">
@@ -91,7 +134,7 @@
 
              </div>
           </nav>
-
+          <a name="home"> <div></div></a>
           <h2 class="neon-heading first"><span class="flickering-3">C</span>.J.  Frei  Art<span class="flickering-1">w</span>ork</h2>
 <div class="container" id="showcase">
   <div class="carousel">
@@ -104,26 +147,34 @@
 
     <!-- <p><li"><a href="#about"><font color="white">About</a></li></font></p> -->
   <div id="about-arrow">
-     <p><a href="#about" id="arrow"><span><i class="fa fa-angle-double-down" aria-hidden="true"></i></span></a></p>
+     <p><a href="#about" id="arrow"><span><i class="fa fa-angle-down" aria-hidden="true"></i></span></a></p>
   </div> 
 
 </div>
 
-
+<hr class="neon-heading.second">
    <!-- About The Artist -->
    <a name="about"><div class="container" id="about-container">
-      <h3>About C.J Frei</h3>
+      <h3>About C. J Frei</h3>
             <div>
-                Here's some info about CJ 
+                
+                <img id="artist-img" src="received_1859541754155813.jpeg">
                 <p>Blah</p>
                 <p>Blah</p>
                 <p>Blah</p>
                 <p>Blah</p>           
              </div>
-          
       </div>
     </a>
+<div class="container" id="footer">
+  <div>
+   <p><a class="btn-large neon-heading.second modal-trigger" href="#modal2" id="contact-button"><i class="material-icons right">email</i>Contact</a></p>
+  </div>
 
+  <div id="home-arrow">
+      <p><a href="#home" id="arrow"><span><i class="fa fa-angle-up" aria-hidden="true"></i></span></a></p>
+   </div>
+</div>
 
 
 <!--Account Management access area-->
@@ -150,8 +201,11 @@ $(document).ready(function(){
       $(".modal-trigger").on("click", function(){
           $("#modal1").modal();
       })
+      $(".modal-trigger").on("click", function(){
+          $("#modal2").modal();
+      })
   });
-   // Scrolls to About Gigify Section
+   // Scrolls to About Artist Section
    $(document).ready(function () {
 $("#arrow").on("click", function () {
         $('html, body').animate({
