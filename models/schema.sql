@@ -15,6 +15,7 @@ CREATE TABLE Artwork
     size varchar(50) NULL,
     medium varchar(50) NULL,
     artist varchar(50) NULL,
+    onCarousel boolean NOT NULL DEFAULT false,
 	PRIMARY KEY (id)
 );
 

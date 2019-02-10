@@ -194,6 +194,7 @@ li {
 }
   
 #about-container{
+
   margin-top: 250px;
   text-align: center;
   font-family:'Waiting for the Sunrise', cursive;
@@ -212,7 +213,6 @@ li {
    color:#9D00FF
 }
 
-
 /* Porfolio Page*/
 
 #portfolio-container{
@@ -221,3 +221,4 @@ li {
   border: solid 2px;
   width:70%;
 }
+
