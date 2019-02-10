@@ -11,8 +11,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       isEmail: true
     },
-    medium: DataTypes.STRING,
-    artist: DataTypes.STRING
+    medium: {
+      type: DataTypes.STRING,
+      defaultValue: "Digital"
+    },
+    artist: {
+      type: DataTypes.STRING,
+      defaultValue: "CJ Frei"
+    }
   });
   return CommissionRequest;
 };
