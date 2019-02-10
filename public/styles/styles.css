@@ -194,35 +194,30 @@ li {
 }
   
 #about-container{
-  margin-top: 10px;
+  margin-top: 250px;
+  text-align: center;
+  font-family:'Waiting for the Sunrise', cursive;
+  background-color:grey;
+  width:70%;
+  color:white;
+  font-size: 18px;
 }
 
-/* About Gigify */
-.about-card {
-  /* width: 100vw;
-  height: 100vh; */
-  padding-top: 10px;
-  background: rgba(36, 87, 108, 0.2);
-  border: none;
-  box-shadow: none;
-  font-size: 20px;
-  align-content: center;
-  color: white;
-}
-
-.about-container {
+#about-arrow{
+  width:100%;
   text-align: center;
 }
-
-.about-header {
-  font-family: 'Pacifico', cursive;
-  display: inline-block;
-  font-size: 80px;
-}
-#about-gigify-arrow {
-  color: white;
+#arrow{
+   font-size:50px;
+   color:#9D00FF
 }
 
-#about-gigify-arrow:hover {
-  cursor: pointer;
+
+/* Porfolio Page*/
+
+#portfolio-container{
+  background-color:grey;
+  border-color:#9D00FF;
+  border: solid 2px;
+  width:70%;
 }
