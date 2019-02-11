@@ -5,9 +5,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
   <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+  <script type = "text/javascript" src = "../js/index.js"></script>           
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
   <link type="text/css" rel="stylesheet" href="../styles/styles.css">
 
 
@@ -15,6 +18,7 @@
 
 <body>
   <!-- Commission Modal-->
+
   <div id="modal1" class="modal">
     <div class="modal-content" id="commission-content">
       <h4 id="modal-header">  Commissioned Art Request</h4>
@@ -41,7 +45,7 @@
             </div>
             <div class="input-field col s6">
                     <i class="material-icons prefix">attach_file</i>
-                   <input id= "icon_attach_file" type="file" class="validate">
+                   <input id= "icon_attach_file" type="file" class="validate" accept="image/*">
                    <label for="icon_attach_file"></label>
                </div>
           </div>
@@ -60,7 +64,6 @@
       <a href="#!" class="modal-close btn-flat" id="modal-submit">Submit</a>
     </div>
   </div>
-
 
   <!--MODAL 2 (Contact)-->
 
@@ -135,7 +138,7 @@
 
              </div>
           </nav>
-         
+
           <h2 class="neon-heading first"><span class="flickering-3">C</span>.J.  Frei  Art<span class="flickering-1">w</span>ork</h2>
 <div class="container" id="showcase">
   <div class="carousel">
@@ -145,6 +148,7 @@
     <a class="carousel-item" href="#four!"><img src="https://firebasestorage.googleapis.com/v0/b/art-portfolio-project02.appspot.com/o/seether.jpg?alt=media&token=5f592dc5-ed48-4d78-ad11-f7d8c744a718"></a>
     <a class="carousel-item" href="#five!"><img src="https://firebasestorage.googleapis.com/v0/b/art-portfolio-project02.appspot.com/o/wrestling_bull.jpg?alt=media&token=b0efae4e-5eca-464b-aafb-92c5e67d6913"></a>
   </div>
+
 
     <!-- <p><li"><a href="#about"><font color="white">About</a></li></font></p> -->
   <div id="about-arrow">
@@ -179,9 +183,12 @@
 
 
 <!--Account Management access area-->
+
 <div id="acct-manage">
   <p><i class="material-icons prefix">whatshot</i>Artist Account Managment</p>
 </div>
+
+
 
 
 
