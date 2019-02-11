@@ -2,7 +2,7 @@ img{
   height: 100%;
   width: 100%;
   border: 10px solid black;
-  margin: 0px 10px; 
+  margin: auto;
   /* transition: transform .2s; Animation */
 }
 /* img:hover{
@@ -268,16 +268,34 @@ hr{
   height:10px;
 }
 .gallery-container{
+  margin-top:2px;
   background-color:grey;
   width:100%;
   color:white;
+}
+.col-sm-12{
+  align-content: center;
+}
+.col-md-2{
+  align-content: center;
 }
 .thumbnail{
   border: 1px solid #ddd; /* Gray border */
   border-radius: 4px;  /* Rounded border */
   padding: 5px; /* Some padding */
   width: 150px;
+  
  
+}
+.caption{
+  text-align: center;
+  font-size: 12px;
+}
+
+.thumbnail:hover{
+
+ border-color:lime;
+  border-block-end-width:1px;
 }
 
 
