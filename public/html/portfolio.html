@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet">
+  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="../styles/styles.css">
+
+
+ </head>
+
+<body>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content" id="commission-content">
+      <h4 id="modal-header">  Commissioned Art Request</h4>
+      <p>Fill out the form below for a custom art quote:</p>
+
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <input id="icon_telephone" type="tel" class="validate">
+              <label for="icon_telephone">Telephone</label>
+            </div>
+          </div>
+         <div class= "row">
+            <div class="input-field col s6">
+                 <i class="material-icons prefix">email</i>
+                <input id= "icon_email" type="email" class="validate">
+                <label for="icon_email">Email</label>
+            </div>
+            <div class="input-field col s6">
+                    <i class="material-icons prefix">attach_file</i>
+                   <input id= "icon_attach_file" type="file" class="validate">
+                   <label for="icon_attach_file"></label>
+               </div>
+          </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Brief Description</label>
+            </div>
+        </div>
+     </form>
+
+
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close btn-flat" id="modal-submit">Submit</a>
+    </div>
+  </div>
+
+
+  <!--MODAL 2 (Contact)-->
+
+  <div id="modal2" class="modal">
+        <div class="modal-content" id="commission-content">
+          <h4 style="text-align: center" id="modal-header">  Let's Chat</h4>
+          <p>Fill out the form below to contact me:</p>
+    
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">phone</i>
+                  <input id="icon_telephone" type="tel" class="validate">
+                  <label for="icon_telephone">Telephone</label>
+                </div>
+              </div>
+             <div class= "row">
+                <div class="input-field col s6">
+                     <i class="material-icons prefix">email</i>
+                    <input id= "icon_email" type="email" class="validate">
+                    <label for="icon_email">Email</label>
+                </div>
+             </div>
+            <div class="row">
+                <div class="input-field col s12" style="text-align: center;">
+                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                  <label for="textarea1">Message:</label>
+                </div>
+            </div>
+         </form>
+    
+    
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close btn-flat" id="contact-submit">Submit</a>
+        </div>
+      </div>
+
+  <!--NAV BAR (SIDE)-->
+        <div class="nav-wrapper">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" id="burger">menu</i></a>
+                <ul id="slide-out" class="side-nav">
+                <!-- <li><a href="#!">About</a></li> -->
+                <p><li"><a href="index.html"><font color="white">About</a></li></font></p>
+                <p><li"><a href=""><font color="white">Portfolio</a></li></font></p>
+                <p><li"><a class="modal-trigger" href="#modal1"><font color="white">Commissions</a></li></font></p>
+                <p><li"><a class="modal-trigger" href="#modal2"><font color="white">Contact</a></li></font></p>
+                  <ul class="collapsible collapsible-accordion"></ul>
+                    <li>
+                        <div class="list-group">
+                            <p><a class="list-group-item" href="https://www.linkedin.com"><font color="white"><i class="fa fa-linkedin-square"></i> LinkedIn</a></font></p>
+                            <p><a class="list-group-item" href="https://www.twitter.com"><font color="white"><i class="fa fa-twitter"></i> Twitter</a></font></p>
+                            <p><a class="list-group-item" href="https://www.instagram.com"><font color="white"><i class="fa fa-instagram"></i> Instagram</a></font></p>
+                            <p><a class="list-group-item" href="https://www.facebook.com/FreiArtStudio/"><font color="white"><i class="fa fa-facebook"></i> Facebook</a></font></p>
+                             </div></li>
+                      <div class="collapsible-body">
+                          
+                        <ul>
+
+
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+
+             </div>
+          </nav>
+          <div id="back-arrow">
+                <p><a href="index.html" id="back"><span><i class="material-icons prefix" style="font-size:90px">keyboard_arrow_left</i></span></a></p>
+             </div> 
+           
+
+          <div class="container z-depth-5" id="portfolio-container">
+              <h2 id="portfolioh2" class="neon-heading second">Brow<span class="flickering-3">s</span>e C. J's Art Por<span class="flickering-1">t</span>folio below:</h2>
+              <div id="upper-portfolio"></div>
+              <div class="z-depth-5" id="portfolio-cards">
+                    
+                          
+
+
+
+              </div>
+              <div id="lower-portfolio"></div>
+          </div>
+
+
+
+          <!-- Account Management access area -->
+<div id="acct-manage">
+    <p><i class="material-icons prefix">whatshot</i>Artist Account Managment</p>
+  </div>
+  
+  
+  
+  <script>
+  $(document).ready(function(){
+  $('.carousel').carousel({
+      padding: 800,
+      dist: -300
+  });
+  });
+  $(document).ready(function(){
+      $('.button-collapse').sideNav({
+            menuWidth: 300, // Default is 240
+            closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+          }
+        );
+        $('.collapsible').collapsible();
+        $(".modal-trigger").on("click", function(){
+            $("#modal1").modal();
+        });
+        $(".modal-trigger").on("click", function(){
+          $("#modal2").modal();
+      })
+    });
+     // Scrolls to About Gigify Section
+     $(document).ready(function () {
+  $("#arrow").on("click", function () {
+          $('html, body').animate({
+              scrollTop: $("#about").offset().top
+          }, 500);
+      });
+     });
+     
+  </script>
+  </body>   
+  </html>
