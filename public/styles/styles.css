@@ -198,6 +198,7 @@ li {
 /*About the ARTIST section*/
 #about-container{
   margin-top: 400px;
+
   text-align: center;
   font-family:'Waiting for the Sunrise', cursive;
   background-color:grey;
@@ -246,6 +247,9 @@ hr{
   color: #9D00FF;
 }
 
+/* Porfolio Page*/
+
+
 #portfolioh2{
   font-family: 'Dosis', Calibri, sans-serif;
   
@@ -292,5 +296,3 @@ hr{
 #footer{
    text-align:center;
 }
-
-
