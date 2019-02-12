@@ -8,16 +8,16 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     switch (req.url) {
       case "/":
-      res.sendFile(path.join(__dirname, "../public/html/index.html"));
-      break;
+        res.sendFile(path.join(__dirname, "../public/html/index.html"));
+        break;
       case "/admin":
-      res.sendFile(path.join(__dirname, "../public/html/admin.html"));
-      break;
+        res.sendFile(path.join(__dirname, "../public/html/admin.html"));
+        break;
       case "/portfolio":
-      res.sendFile(path.join(__dirname, "../public/html/portfolio.html"));
-      break;
+        res.sendFile(path.join(__dirname, "../public/html/portfolio.html"));
+        break;
       default:
-      res.sendFile(path.join(__dirname, "../public/html/404.html"));
+        res.sendFile(path.join(__dirname, "../public/html/404.html"));
     }
   });
 };
