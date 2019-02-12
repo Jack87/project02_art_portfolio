@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "burgerTime/!",
+    "password": "letmein!",
     "port": 3306,
     "database": "portfolio_db",
     "host": "localhost",
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "letmein!",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
