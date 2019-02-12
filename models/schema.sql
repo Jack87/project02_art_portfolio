@@ -44,3 +44,5 @@ values ('Adam West', 'Adam West revealing Batman logo on chest.', '2017-02-10', 
 ('Robin Williams Tribute', 'Tribute to Robin Williams and the roles he played in films.', '2017-10-23', 'https://firebasestorage.googleapis.com/v0/b/art-portfolio-project02.appspot.com/o/robin_williams_tribute.jpg?alt=media&token=42dd26e5-bf15-4eca-9ab6-504713148704', 'Actors', 70.00, '1162px x 930px', 'Digital', 'CJ Frei', 0)
 
 -- UPDATE `portfolio_db`.`artwork` SET `imgURL` = 'https://firebasestorage.googleapis.com/v0/b/art-portfolio-project02.appspot.com/o/robin_williams_tribute.jpg?alt=media&token=42dd26e5-bf15-4eca-9ab6-504713148704' WHERE (`id` = '8');
+
+
