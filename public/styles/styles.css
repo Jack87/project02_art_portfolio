@@ -317,13 +317,18 @@ hr{
   border: 1px solid #ddd; /* Gray border */
   border-radius: 4px;  /* Rounded border */
   padding: 5px; /* Some padding */
-  width: 150px;
+  width: 180px;
+  height:225px;
+  margin-bottom: 100px;
   
- 
+}
+.lightbox {
+  margin-top: 15px;
 }
 .caption{
   text-align: center;
   font-size: 12px;
+  margin-bottom: 20px;
 }
 
 .thumbnail:hover{
