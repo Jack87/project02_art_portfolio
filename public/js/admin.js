@@ -15,7 +15,7 @@ $(document).ready(function() {
           displayEmpty();
         }
         else {
-          initializeRows();
+          initializeRows(doGallery);
         }
       });
     }
@@ -38,13 +38,14 @@ $(document).ready(function() {
 
     // InitializeRows handles appending all of our constructed image HTML inside
     // imageContainer
-    function initializeRows() {
+    function initializeRows(callback) {
       imageContainer.empty();
       var imagesToAdd = [];
       for (var i = 0; i < images.length; i++) {
         imagesToAdd.push(createNewThumbnail(images[i]));
       }
       imageContainer.append(imagesToAdd);
+      callback();
     }
   
     // This function constructs a image's HTML
@@ -125,14 +126,15 @@ $(document).ready(function() {
   
   });
 
-document.body.addEventListener('DOMSubtreeModified', function () {
-    // doGallery();
-    baguetteBox.run('.tz-gallery');   
-  }, false);
+// document.body.addEventListener('DOMSubtreeModified', function () {
+//     // doGallery();
+//     baguetteBox.run('.tz-gallery');   
+//   }, false);
 
   function doGallery() {
     console.log("this just happened")
     baguetteBox.run('.tz-gallery');
   }
+//   baguetteBox.run('.tz-gallery');
 
   
