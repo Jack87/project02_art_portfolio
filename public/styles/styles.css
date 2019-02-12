@@ -40,6 +40,11 @@ ul{
 body{
   background-color: black;
 }
+.modal{
+  margin-top:15px;
+  z-index:99;
+  width:55% ! important;
+}
 #showcase {
   padding-top:4%;
   background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1576818.jpg");
@@ -187,16 +192,18 @@ span.flickering-3 {
   91% { opacity: 1; }
   100% { opacity: 1; }
 }
-.list-group {
+.list-group-portfolio {
   font-size: 25px;
   margin-top: 50%;
   color: white;
-}
+ }
 
-/* 
-li {
-  margin-left: 10px;
-} */
+
+ .list-group-item-portfolio{
+   background-color:none ! important; 
+ }
+
+
   
 
 /*About the ARTIST section*/
