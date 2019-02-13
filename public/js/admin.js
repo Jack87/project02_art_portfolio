@@ -22,16 +22,6 @@ $(document).ready(function() {
         callback();
       });
     },
-    saveCommissionRequest: function(commissionrequest) {
-      return $.ajax({
-        headers: {
-          "Content-Type": "application/json"
-        },
-        type: "POST",
-        url: "api/commission%20request",
-        data: JSON.stringify(commissionrequest)
-      });
-    },
     getArtwork: function() {
       return $.ajax({
         url: "api/artwork",
