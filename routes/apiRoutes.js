@@ -44,5 +44,17 @@ module.exports = function(app) {
         }
       });
   });
+
+    // DELETE route for deleting posts
+    app.delete("/api/images/:id", function(req, res) {
+      db.Artwork.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+        .then(function(dbArtwork) {
+          res.json(dbArtwork);
+        });
+    });
   // Update and destroy functionality not needed at this time. Can be added as needed.
 };
