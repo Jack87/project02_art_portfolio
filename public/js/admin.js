@@ -132,8 +132,8 @@ $(document).ready(function() {
   // imageContainer holds all of our images
   var imageContainer = $(".image-container");
   // Click events for the edit and delete buttons
-  // $(document).on("click", "button.delete", handleImageDelete);
-  // $(document).on("click", "button.edit", handleImageEdit);
+  $(document).on("click", "button.deleteBtn", handleImageDelete);
+  $(document).on("click", "button.editBtn", handleImageEdit);
   var images;
 
   // This function grabs images from the database and updates the view
@@ -151,15 +151,15 @@ $(document).ready(function() {
   }
 
   // This function does an API call to delete images
-  // function deleteImage(id) {
-  //   $.ajax({
-  //     method: "DELETE",
-  //     url: "/api/images/" + id
-  //   })
-  //     .then(function() {
-  //       getImages(imagetCategorySelect.val());
-  //     });
-  // }
+  function deleteImage(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/images/" + id
+    })
+      .then(function() {
+        getImages();
+      });
+  }
 
   // Getting the initial list of images
 
@@ -186,6 +186,9 @@ $(document).ready(function() {
     var editBtn = $("<button>");
     editBtn.addClass("editBtn btn btn-secondary");
     editBtn.html("<i class='far fa-edit'></i>");
+    var deleteBtn = $("<button>");
+    deleteBtn.addClass("deleteBtn btn btn-danger float-right");
+    deleteBtn.html("<i class='fa fa-trash-o'></i>");
 
     var lightBox = $("<a>");
     lightBox.addClass("lightbox");
@@ -207,6 +210,7 @@ $(document).ready(function() {
     thumbnailDescription.text("Description: " + image.description);
 
     //Adding it all to DOM
+    thumbnail.append(deleteBtn);
     thumbnail.append(editBtn);
     thumbnail.append(lightBox);
     lightBox.append(imgSRC);
@@ -225,23 +229,22 @@ $(document).ready(function() {
 
   // This function figures out which image we want to delete and then calls
   // deleteImage
-  // function handleImageDelete() {
-  //   var currentImage = $(this)
-  //     .parent()
-  //     .parent()
-  //     .data("image");
-  //   deleteImage(currentImage.id);
-  // }
+  function handleImageDelete() {
+    console.log(this);
+    var currentImage = $(this)
+      .parent()
+      .data("image");
+    deleteImage(currentImage.id);
+  }
 
   // This function figures out which image we want to edit and takes it to the
   // Appropriate url
-  // function handleImageEdit() {
-  //   var currentImage = $(this)
-  //     .parent()
-  //     .parent()
-  //     .data("image");
-  //   window.location.href = "/cms?image_id=" + currentImage.id;
-  // }
+  function handleImageEdit() {
+    var currentImage = $(this)
+      .parent()
+      .data("image");
+    window.location.href = "/cms?image_id=" + currentImage.id;
+  }
 
   // This function displays a message when there are no images
   function displayEmpty() {
