@@ -23,12 +23,12 @@ ul{
   font-family: 'Waiting for the Sunrise', cursive;
   opacity: .7;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 50px;
   background-color:black;
   color: white !important;
-  width:200px;
+  width:250px;
   padding-left: 8px;
-  margin-top:56px;
+  
   
 }
 #acct-manage{
@@ -192,19 +192,19 @@ span.flickering-3 {
   91% { opacity: 1; }
   100% { opacity: 1; }
 }
-.list-group-portfolio {
-  font-size: 25px;
-  margin-top: 50%;
+
+.list-group-item {
+  font-size: 45px;
+  /* margin-top: 30%; */
   color: white;
  }
-
-
- .list-group-item-portfolio{
-   background-color:none ! important; 
+ .side-nav li>a {
+   margin-top: none;
+   font-size:30px !important;
+   color:teal;
  }
 
 
-  
 
 /*About the ARTIST section*/
 h3 {
