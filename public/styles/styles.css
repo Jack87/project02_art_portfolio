@@ -23,12 +23,12 @@ ul{
   font-family: 'Waiting for the Sunrise', cursive;
   opacity: .7;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 50px;
   background-color:black;
   color: white !important;
-  width:200px;
+  width:250px;
   padding-left: 8px;
-  margin-top:56px;
+  
   
 }
 #acct-manage{
@@ -39,6 +39,11 @@ ul{
 }
 body{
   background-color: black;
+}
+.modal{
+  margin-top:15px;
+  z-index:99;
+  width:55% ! important;
 }
 #showcase {
   padding-top:4%;
@@ -187,16 +192,21 @@ span.flickering-3 {
   91% { opacity: 1; }
   100% { opacity: 1; }
 }
-.list-group {
-  font-size: 25px;
-  margin-top: 50%;
+.list-group-item {
+  font-size: 45px;
+  /* margin-top: 30%; */
   color: white;
-}
+ }
+ .side-nav li>a {
+   margin-top: none;
+   font-size:30px !important;
+   color:teal;
+ }
 
-/* 
-li {
-  margin-left: 10px;
-} */
+
+ 
+
+
   
 
 /*About the ARTIST section*/
@@ -310,13 +320,18 @@ hr{
   border: 1px solid #ddd; /* Gray border */
   border-radius: 4px;  /* Rounded border */
   padding: 5px; /* Some padding */
-  width: 150px;
+  width: 180px;
+  height:225px;
+  margin-bottom: 100px;
   
- 
+}
+.lightbox {
+  margin-top: 15px;
 }
 .caption{
   text-align: center;
   font-size: 12px;
+  margin-bottom: 20px;
 }
 
 .thumbnail:hover{
