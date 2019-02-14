@@ -192,6 +192,7 @@ span.flickering-3 {
   91% { opacity: 1; }
   100% { opacity: 1; }
 }
+
 .list-group-item {
   font-size: 45px;
   /* margin-top: 30%; */
@@ -204,10 +205,6 @@ span.flickering-3 {
  }
 
 
- 
-
-
-  
 
 /*About the ARTIST section*/
 h3 {

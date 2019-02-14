@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+  <link type="text/css" rel="stylesheet" href="../styles/admin.css">
+ </head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Admin Panel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Gallery<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Bio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Commissions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="table_container border rounded my-4">
+            <div class="card-header bg-dark text-light font-weight-bold">List of Commissioned Work</div>
+            <table class="table thead-light table-striped ">   
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Attachment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <form class="border rounded my-4 pb-3">
+            <div class="card-header bg-darK text-dark font-weight-bold">Add a Job</div>
+            <div class="form-group pt-2 px-3">
+                <label for="name">Name</label>
+                <input type="name" class="form-control" id="name">
+            </div>
+            <div class="form-group px-3">
+                <label for="telephone">Telephone</label>
+                <input type="telephone" class="form-control" id="telephone">
+            </div>
+            <div class="form-group px-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group px-3">
+                <label for="description">Description</label>
+                <input type="description" class="form-control" id="description">
+            </div>
+            <button type="submit" class="btn btn-dark ml-4" id= "submit">Submit</button>
+        </form>
+    </div>
+
+<script>
+    $("#submit").on("click", function () {
+        event.preventDefault();
+    
+        // save variables from form
+        var name = $("#name").val().trim();
+        var telephone = $("#telephone").val().trim();
+        var email = $("#email").val().trim();
+        var description = $("#description").val().trim();
+    
+        // push variables to database
+        database.ref("").push({
+            name: name,
+            telephone: telephone,
+            email: email,
+            description: description,
+        });
+    
+        // reset form
+        $("#name").val("");
+        $("#telephone").val("");
+        $("#email").val("");
+        $("#description").val(""); 
+    });
+    
+    // when a new train gets added
+    database.ref("").on("child_added", function (snapshot) {
+        var data= snapshot.val();
+    
+    // display train schedule
+        $("tbody").append("<tr><td>" + data.name + "</td><td>" + data.telephone + "</td><td>" + data.email + "</td><td>" + description + "</td></tr>");
+    });
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <script src="../js/admin.js"></script>
+        <!-- <script>
+                baguetteBox.run('.tz-gallery');
+        </script> -->
+  
+</body>   
+
+
+</html>

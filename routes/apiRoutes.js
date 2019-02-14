@@ -7,7 +7,7 @@ module.exports = function(app) {
   // Get all artwork from the database
   app.get("/api/artwork", function(req, res) {
     db.Artwork.findAll({}).then(function(dbArtwork) {
-      res.json(dbArtwork);
+      return res.json(dbArtwork);
     });
   });
 
