@@ -45,10 +45,12 @@ function grabArtworkData() {
       var $captionDiv = $("<div>", { class: "caption" });
       var $captionHeading = $("<h5 id=" + i + ">");
       var $captionPara = $("<p id=" + i + ">");
+
       $captionPara.text(res[i].medium);
       $captionHeading.text(res[i].title);
       $captionDiv.append($captionHeading);
       $captionDiv.append($captionPara);
+
       $img.attr({
         src: res[i].imgURL,
         alt: res[i].title
@@ -57,11 +59,16 @@ function grabArtworkData() {
       $lightBoxA.attr({
         href: res[i].imgURL
       });
+
       $thumbnailDiv.append($lightBoxA);
       $thumbnailDiv.append($captionDiv);
+      $thumbnailDiv.data("image", res[i]);
+
       $columnDiv.append($thumbnailDiv);
       $(".imageGallery").append($columnDiv);
+
       baguetteBox.run(".tz-gallery");
+      console.log($thumbnailDiv.data());
     }
   });
 }
