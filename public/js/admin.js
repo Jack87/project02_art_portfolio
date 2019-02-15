@@ -155,10 +155,9 @@ $(document).ready(function() {
     $.ajax({
       method: "DELETE",
       url: "/api/images/" + id
-    })
-      .then(function() {
-        getImages();
-      });
+    }).then(function() {
+      getImages();
+    });
   }
 
   // Getting the initial list of images
