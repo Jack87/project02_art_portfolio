@@ -242,7 +242,9 @@ $(document).ready(function() {
     var currentImage = $(this)
       .parent()
       .data("image");
-    window.location.href = "/cms?image_id=" + currentImage.id;
+    // window.location.href = "/cms?image_id=" + currentImage.id;
+    console.log(currentImage);
+    $("#addImageBtn").click();
   }
 
   // This function displays a message when there are no images
