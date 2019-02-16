@@ -111,10 +111,10 @@
                      <p><li><a href="/portfolio"><font color="white">Portfolio</a></font></li></p>
                      <p><li><a class="modal-trigger" href="#modal1"><font color="white">Commissions</a></font></li></p>
                      <p><li><a class="modal-trigger" href="#modal2"><font color="white">Contact</a></font></li></p>
-                     <p><li><a class="list-group-item" href="https://www.linkedin.com" target=_blank><font color="white"><i class="fa fa-linkedin-square"></i> LinkedIn</a></font></li></p>
-                     <p><li><a class="list-group-item" href="https://www.twitter.com" target=_blank><font color="white"><i class="fa fa-twitter"></i> Twitter</a></font></li></p>
-                     <p><li><a class="list-group-item" href="https://www.instagram.com" target=_blank><font color="white"><i class="fa fa-instagram"></i> Instagram</a></font></li></p>
-                     <p><li><a class="list-group-item" href="https://www.facebook.com/FreiArtStudio/" target=_blank><font color="white"><i class="fa fa-facebook"></i> Facebook</a></font></li></p>
+                     <p><li><a class="list-group-item" href="https://www.linkedin.com" target=_blank><font color="white"><i class="fa fa-linkedin-square"></i><span class="smscreen">LinkedIn</span></a></font></li></p>
+                     <p><li><a class="list-group-item" href="https://www.twitter.com" target=_blank><font color="white"><i class="fa fa-twitter"></i><span class="smscreen"> Twitter</span></a></font></li></p>
+                     <p><li><a class="list-group-item" href="https://www.instagram.com" target=_blank><font color="white"><i class="fa fa-instagram"></i><span class="smscreen">Instagram</span></a></font></li></p>
+                     <p><li><a class="list-group-item" href="https://www.facebook.com/FreiArtStudio/" target=_blank><font color="white"><i class="fa fa-facebook"></i><span class="smscreen">Facebook</span></a></font></li></p>
                 </ul>
           </div>
                   
@@ -122,7 +122,7 @@
 
   <h2 class="neon-heading first"><span class="flickering-3">C</span>.J.  Frei  Art<span class="flickering-1">w</span>ork</h2>
   <div class="container" id="showcase">
-    <div class="carousel">
+    <div class="carousel" data-indicators="true">
       <a class="carousel-item" href="#one!"><img src="../Images/kurt.png"></a>
       <a class="carousel-item" href="#two!"><img src="https://firebasestorage.googleapis.com/v0/b/art-portfolio-project02.appspot.com/o/women_in_red_swimming.jpg?alt=media&token=b5157b96-d52f-4269-a144-1071628cb7d8"></a>
       <a class="carousel-item" href="#three!"><img src="https://firebasestorage.googleapis.com/v0/b/art-portfolio-project02.appspot.com/o/the_tutles.jpg?alt=media&token=b3ba1ef0-4032-4198-95d8-c6d78e6dfba6"></a>
@@ -130,10 +130,11 @@
       <a class="carousel-item" href="#five!"><img src="https://firebasestorage.googleapis.com/v0/b/art-portfolio-project02.appspot.com/o/wrestling_bull.jpg?alt=media&token=b0efae4e-5eca-464b-aafb-92c5e67d6913"></a>
     </div>
     <!-- <p><li"><a href="#about"><font color="white">About</a></li></font></p> -->
-    <div id="about-arrow">
-      <p><a href="#about" id="arrow"><span><i class="fa fa-angle-down" aria-hidden="true"></i></span></a></p>
-    </div> 
   </div>
+  <div id="about-arrow">
+    <p><a href="#about" id="arrow"><span><i class="fa fa-angle-down" aria-hidden="true"></i></span></a></p>
+  </div> 
+
 
   <!-- About The Artist -->
   <a name="about">
@@ -170,37 +171,32 @@
 
   <script>
   $(document).ready(function(){
-  $('.carousel').carousel({
+
+    $('.carousel').carousel({
       padding: 800,
       dist: -300
   });
+     
   });
-  $(document).ready(function(){
+
+$(document).ready(function(){
       $('.button-collapse').sideNav({
         menuWidth: 300, // Default is 240
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      }
-      );
+      });
+
+
         $('.collapsible').collapsible();
         $(".modal-trigger").on("click", function(){
             $("#modal1").modal();
-        })
+        });
         $(".modal-trigger").on("click", function(){
             $("#modal2").modal();
-        })
+        });
 
+       
     });
-    // Scrolls to About Artist Section
-    $(document).ready(function () {
-  $("#arrow").on("click", function () {
-          $('html, body').animate({
-              scrollTop: $("#about").offset().top
-          }, 500);
-      });
-    });
-
     
   </script>
 </body>   
 </html>
-
