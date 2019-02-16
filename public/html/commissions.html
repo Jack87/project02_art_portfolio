@@ -4,7 +4,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link type="text/css" rel="stylesheet" href="../styles/admin.css">
  </head>
 
@@ -16,22 +15,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Gallery<span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin">Gallery</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Bio</a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/commissions">Commissions<span class="sr-only">(current)</span></a>
+            </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Commissions</a>
+                <a class="nav-link" href="/admin/inbox">Inbox</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
             </ul>
+            <a class="nav-link text-danger float-right" href="/" target="_blank"><i class="fas fa-external-link-alt"></i> Launch Page</a>
         </div>
     </nav>
-    <div class="container">
+    <div class="container commissions-container">
+        <h1>Commissions Log</h1>
+        <p class="page-description text-center">Log of commissions requets. With ability to add new commissions orders. Allows for artist to add proposed quote.</p>
         <div class="table_container border rounded my-4">
             <div class="card-header bg-dark text-light font-weight-bold">List of Commissioned Work</div>
             <table class="table thead-light table-striped ">   
@@ -105,17 +110,11 @@
 
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
         <script src="../js/admin.js"></script>
-        <!-- <script>
-                baguetteBox.run('.tz-gallery');
-        </script> -->
-  
+
 </body>   
-
-
 </html>
