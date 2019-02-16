@@ -385,19 +385,23 @@ hr{
     margin-bottom: 5px;
 
   }
-
+  .first{
+    font-size: 50px !important;
+  }
   .second{
     font-size:25px !important;
   }
 
   #modal1{
     height:100% !important;
-    width:100% !important;
+    font:16px;
+    width:80% !important;
     margin: 0 auto !important;
   }
   #modal2{
     height:100% !important;
-    width:100% !important;
+    font:16px;
+    width:80% !important;
     margin: 0 auto !important;
   }
   .side-nav {
