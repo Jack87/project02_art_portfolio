@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
+  <link type="text/css" rel="stylesheet" href="../styles/cssReset.css">  
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -39,7 +40,10 @@
         <p class="page-description text-center">Log of commissions requets. With ability to add new commissions orders. Allows for artist to add proposed quote.</p>
         <div class="table_container border rounded my-4">
             <div class="card-header bg-dark text-light font-weight-bold">List of Commissioned Work</div>
-            <table class="table thead-light table-striped ">   
+            <div class="commissionsCards">
+
+            </div>
+            <!-- <table class="table thead-light table-striped ">   
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
@@ -51,7 +55,7 @@
                 </thead>
                 <tbody>
                 </tbody>
-            </table>
+            </table> -->
         </div>
         <form class="border rounded my-4 pb-3">
             <div class="card-header bg-darK text-dark font-weight-bold">Add a Job</div>
@@ -114,7 +118,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-        <script src="../js/admin.js"></script>
+        <script src="../js/commissions.js"></script>
 
 </body>   
 </html>
