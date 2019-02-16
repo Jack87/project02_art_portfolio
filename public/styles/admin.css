@@ -28,6 +28,9 @@ body {
     font-size: 18px;
 }
 
+.comThumb{
+    height: 200px;
+}
 .tz-gallery {
     padding: 40px;
 }

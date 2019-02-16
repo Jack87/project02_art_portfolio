@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   // Get all the commmission requests from the database. This should be changed to find all the commissions for a particular artist
   // Base this on which artist is logged in
-  app.get("/api/commission%20request", function(req, res) {
+  app.get("/api/commissions", function(req, res) {
     db.CommissionRequest.findAll({}).then(function(dbCommisionRequest) {
       res.json(dbCommisionRequest);
     });
