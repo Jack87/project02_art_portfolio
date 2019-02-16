@@ -97,7 +97,7 @@ $(document).ready(function() {
         // https://irebase.google.com/docs/storage/web/handle-errors
         switch (error.code) {
           case "storage/unauthorized":
-            console.log(
+            alert(
               "User is not authorized to access this database, or file type is incorrect."
             );
             break;
@@ -128,6 +128,7 @@ $(document).ready(function() {
         $("#textarea1").val("");
         $("#icon_attach_file").val("");
         API.saveCommissionRequest(commissionrequest);
+        alert("Commission request submitted successfully.");
       });
     }
   });
