@@ -372,11 +372,17 @@ hr{
 }
 #footer{
    text-align:center;
+
+
+
+
+   /*@ MEDIA SPECIFICATIONS*/
 }
 @media screen and (max-width:600px){
   #burger{
     position:relative;
     margin: 0 auto;
+    margin-bottom: 5px;
 
   }
 
@@ -415,6 +421,19 @@ hr{
   font-size: 16px;
   /* margin-top: 30%; */
   color: white;
+ }
+ 
+ #portfolio-cards{
+   margin-left:27%;
+ }
+
+ #portfolioh2{
+   margin-top:20px;
+   margin-bottom:9px;
+   text-align: center;
+ }
+ .myClickState{
+   border-color:#33FF00;
  }
 
 }

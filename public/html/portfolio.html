@@ -119,10 +119,10 @@
                      <p><li><a href="/html/#about"><font color="white">About</a></font></li></p>
                      <p><li><a class="modal-trigger" href="#modal1"><font color="white">Commissions</a></font></li></p>
                      <p><li><a class="modal-trigger" href="#modal2"><font color="white">Contact</a></font></li></p>
-                     <p><li><a class="list-group-item" href="https://www.linkedin.com" target=_blank><font color="white"><i class="fa fa-linkedin-square"></i> LinkedIn</a></font></li></p>
-                     <p><li><a class="list-group-item" href="https://www.twitter.com" target=_blank><font color="white"><i class="fa fa-twitter"></i> Twitter</a></font></li></p>
-                     <p><li><a class="list-group-item" href="https://www.instagram.com" target=_blank><font color="white"><i class="fa fa-instagram"></i> Instagram</a></font></li></p>
-                     <p><li><a class="list-group-item" href="https://www.facebook.com/FreiArtStudio/" target=_blank><font color="white"><i class="fa fa-facebook"></i> Facebook</a></font></li></p>
+                     <p><li><a class="list-group-item" href="https://www.linkedin.com" target=_blank><font color="white"><i class="fa fa-linkedin-square"></i><span class="smscreen"> LinkedIn</span></a></font></li></p>
+                     <p><li><a class="list-group-item" href="https://www.twitter.com" target=_blank><font color="white"><i class="fa fa-twitter"></i><span class="smscreen"> Twitter</span></a></font></li></p>
+                     <p><li><a class="list-group-item" href="https://www.instagram.com" target=_blank><font color="white"><i class="fa fa-instagram"></i><span class="smscreen"> Instagram</span></a></font></li></p>
+                     <p><li><a class="list-group-item" href="https://www.facebook.com/FreiArtStudio/" target=_blank><font color="white"><i class="fa fa-facebook"></i><span class="smscreen">Facebook</span></a></font></li></p>
                 </ul>
           </div>        
                   
@@ -134,7 +134,7 @@
            
 
           <div class="container z-depth-5" id="portfolio-container">
-              <h2 id="portfolioh2" class="neon-heading second">Brow<span class="flickering-3">s</span>e C. J's Art Por<span class="flickering-1">t</span>folio below:</h2>
+              <h2 id="portfolioh2" class="neon-heading second">Brow<span class="flickering-3">s</span>e C. J's Art Por<span class="flickering-1">t</span>folio</h2>
               <div id="upper-portfolio"></div>
               <div id="portfolio-cards">
                         <div class="container gallery-container">
@@ -154,6 +154,17 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col l2 m4 s12">
+                                          <div class="thumbnail">
+                                              <a class="lightbox" href="../Images/kurt.png">
+                                                  <img src="../Images/kurt.png" alt="Kurt Cobain">
+                                              </a>
+                                              <div class="caption">
+                                                  <h5>Kurt Cobain</h5>
+                                                  <p>Digital</p>
+                                              </div>
+                                          </div>
+                                      </div>
                                     </div>
                             
                                 </div>
@@ -191,6 +202,8 @@ $(document).ready(function(){
           closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
         }
       );
+
+      //Modal Triggers jQ
       $('.collapsible').collapsible();
       $(".modal-trigger").on("click", function(){
           $("#modal1").modal();
@@ -198,7 +211,15 @@ $(document).ready(function(){
       $(".modal-trigger").on("click", function(){
         $("#modal2").modal();
     });
+
+        //Running baguette box image-viewer
         baguetteBox.run('.tz-gallery');
+        
+        //Allow mobile click border color on images
+        $('.lightbox').on('click', function(e){
+         e.preventDefault();
+        $(this).toggleClass('myClickState');
+    });
 });
    </script>
     
