@@ -13,6 +13,12 @@ module.exports = function(app) {
       case "/admin":
         res.sendFile(path.join(__dirname, "../public/html/admin.html"));
         break;
+      case "/admin/commissions":
+        res.sendFile(path.join(__dirname, "../public/html/commissions.html"));
+        break;
+      case "/admin/inbox":
+        res.sendFile(path.join(__dirname, "../public/html/inbox.html"));
+        break;
       case "/portfolio":
         res.sendFile(path.join(__dirname, "../public/html/portfolio.html"));
         break;
