@@ -46,3 +46,5 @@ values ('Adam West', 'Adam West revealing Batman logo on chest.', '2017-02-10', 
 -- UPDATE `portfolio_db`.`artwork` SET `imgURL` = 'https://firebasestorage.googleapis.com/v0/b/art-portfolio-project02.appspot.com/o/robin_williams_tribute.jpg?alt=media&token=42dd26e5-bf15-4eca-9ab6-504713148704' WHERE (`id` = '8');
 
 
+INSERT INTO CommissionRequests (name, requestDetails, referenceImgURL, phone, email, medium, artist)
+values ('Andy Marshall', 'Johnny Cash Portrait', 'http://www.gstatic.com/tv/thumb/persons/78737/78737_v9_bb.jpg', 555-5555, 'genericemail@gmail.com', 'digital', 'CJ Frei')
