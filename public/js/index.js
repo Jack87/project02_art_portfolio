@@ -55,7 +55,6 @@ $(document).ready(function() {
   };
 
   $("#modal-submit").click(function() {
-    console.log($("#icon_attach_file")[0].files[0].type);
     var name = $("#icon_prefix").val();
     var phone = $("#icon_telephone").val();
     var email = $("#icon_email").val();
@@ -81,7 +80,6 @@ $(document).ready(function() {
       function(snapshot) {
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log("Upload is " + progress + "% done");
-        console.log(typeof progress);
         if (progress === 100) {
           uploadIsDone();
         }
@@ -99,7 +97,9 @@ $(document).ready(function() {
         // https://irebase.google.com/docs/storage/web/handle-errors
         switch (error.code) {
           case "storage/unauthorized":
-            console.log("User is not authorized to access this database.");
+            alert(
+              "User is not authorized to access this database, or file type is incorrect."
+            );
             break;
           case "storage/canceled":
             console.log("User has cancelled the upload.");
@@ -122,7 +122,13 @@ $(document).ready(function() {
           phone: phone,
           email: email
         };
+        $("#icon_prefix").val("");
+        $("#icon_telephone").val("");
+        $("#icon_email").val("");
+        $("#textarea1").val("");
+        $("#icon_attach_file").val("");
         API.saveCommissionRequest(commissionrequest);
+        alert("Commission request submitted successfully.");
       });
     }
   });
