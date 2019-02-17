@@ -99,7 +99,38 @@
     </div>
 
 
+<!--MODAL 3 Login for admin-->
 
+<div id="modal3" class="modal">
+  <div class="modal-content" id="login-content">
+    <h4 style="text-align: center" id="modal-header">  Please Login</h4>
+    <p>Enter your credentials</p>
+    <p>By clicking new user, your username and password will be added</p>
+    <p>By clicking login, you will be logged into your admin panel</p>
+
+      <form id="login-form" autocomplete="off" class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="user-name" type="text" class="validate">
+            <label for="user-name">User Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">lock</i>
+            <input id="passWord" type="password" class="validate">
+            <label for="passWord">Password</label>
+          </div>
+        </div>
+   </form>
+
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close btn-flat left" id="new-user-submit">New User</a>
+    <a href="#!" class="modal-close btn-flat" id="login-submit">Login</a>
+  </div>
+</div>
 
   <!--NAV BAR (SIDE)-->
   <a name="home"></a> 
@@ -161,13 +192,14 @@
 
   <!--Account Management access area-->
   <div id="acct-manage">
-    <p><a href="/admin" target="blank"><i class="material-icons prefix">whatshot</i> Account Managment</a></p>
+    <p><a href="#modal3" id="to-admin" class="modal-trigger"><i class="material-icons prefix">whatshot</i> Account Managment</a></p>
   </div>
 
 <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 <script type = "text/javascript" src = "../js/index.js"></script>           
+<script type = "text/javascript" src = "../js/login.js"></script>           
 
   <script>
 
@@ -189,24 +221,25 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
+
+  $('.button-collapse').sideNav({
+    menuWidth: 300, // Default is 240
+    closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+  });
+
+
+  $('.collapsible').collapsible();
+  $(".modal-trigger").on("click", function(){
+      $("#modal1").modal();
+  });
+  $(".modal-trigger").on("click", function(){
+      $("#modal2").modal();
+  });
+  $(".modal-trigger").on("click", function() {
+    $("#modal3").modal();
+  });
     
-
-      $('.button-collapse').sideNav({
-        menuWidth: 300, // Default is 240
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      });
-
-
-        $('.collapsible').collapsible();
-        $(".modal-trigger").on("click", function(){
-            $("#modal1").modal();
-        });
-        $(".modal-trigger").on("click", function(){
-            $("#modal2").modal();
-        });
-
-       
-    });
+});
 
 
     

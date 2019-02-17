@@ -372,12 +372,20 @@ hr{
 }
 #footer{
    text-align:center;
+}
 
+/*Modal 3- login modal styling*/
+
+#new-user-submit, #login-submit{
+  background-color: teal;
+  font-family: 'Waiting for the Sunrise', cursive;
+  color:white;
+  font-size: 18px;
+}
 
 
 
    /*@ MEDIA SPECIFICATIONS*/
-}
 @media screen and (max-width:600px){
   #burger{
     position:relative;
